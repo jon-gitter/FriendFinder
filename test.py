@@ -13,12 +13,18 @@ answers= {
   "answer2": ["A: action", "B: scifi/fantasy", "C: romcom", "D: drama"],
   "answer3": ["A: outdoors stuff", "B: gaming", "C: dancing", "D: workout"],
   "answer4": ["A: wine", "B: beer", "C: hard seltzer", "D: mixed drink"],
-  "answer5": ["A: what do you for work?", "B: weather", "C: sports", "D: current location/venue"]
+  "answer5": ["A: what do you do for work?", "B: weather", "C: sports", "D: current location/venue"]
 }
 
 answerweight= []
 
+#name function
+def namequestion():
+    time.sleep(1.5)
+    print("What is your name?")
+    name= input()
 
+#first function
 def firstquestion():
     time.sleep(1.5)
     print("\n", questions["question1"])
@@ -37,6 +43,27 @@ def firstquestion():
     elif user_answer1 == "d":
       print(f"You chose --> {answers['answer1'][3]}")
       answerweight.append(3)
+    else:
+      while user_answer1 != ["a", "b", "c", "d"]:
+        print("Please choose A, B, C, or D")
+        user_answer1= input("Enter choice: ").lower()
+        if user_answer1 == "a":
+          print(f"You chose --> {answers['answer1'][0]}")
+          answerweight.append(4)
+          break
+        elif user_answer1 == "b":
+          print(f"You chose --> {answers['answer1'][1]}")
+          answerweight.append(2)
+          break
+        elif user_answer1 == "c":
+          print(f"You chose --> {answers['answer1'][2]}")
+          answerweight.append(1)
+          break
+        elif user_answer1 == "d":
+          print(f"You chose --> {answers['answer1'][3]}")
+          answerweight.append(3)
+          break
+        
 
 #second function   
 def secondquestion():
@@ -57,8 +84,26 @@ def secondquestion():
   elif user_answer1 == "d":
     print(f"You chose --> {answers['answer2'][3]}")
     answerweight.append(4)
-  elif user_answer1 != ["a", "b", "c", "d"]:
-    print("Please choose A, B, C, or D to continue")
+  else:
+      while user_answer1 != ["a", "b", "c", "d"]:
+        print("Please choose A, B, C, or D")
+        user_answer1= input("Enter choice: ").lower()
+        if user_answer1 == "a":
+          print(f"You chose --> {answers['answer2'][0]}")
+          answerweight.append(3)
+          break
+        elif user_answer1 == "b":
+          print(f"You chose --> {answers['answer2'][1]}")
+          answerweight.append(2)
+          break
+        elif user_answer1 == "c":
+          print(f"You chose --> {answers['answer2'][2]}")
+          answerweight.append(1)
+          break
+        elif user_answer1 == "d":
+          print(f"You chose --> {answers['answer2'][3]}")
+          answerweight.append(4)
+          break
       
 
 #third function
@@ -80,8 +125,26 @@ def thirdquestion():
   elif user_answer1 == "d":
     print(f"You chose --> {answers['answer3'][3]}")
     answerweight.append(2)
-  elif user_answer1 != ["a", "b", "c", "d"]:
-    print("Please choose A, B, C, or D to continue")
+  else:
+      while user_answer1 != ["a", "b", "c", "d"]:
+        print("Please choose A, B, C, or D")
+        user_answer1= input("Enter choice: ").lower()
+        if user_answer1 == "a":
+          print(f"You chose --> {answers['answer3'][0]}")
+          answerweight.append(4)
+          break
+        elif user_answer1 == "b":
+          print(f"You chose --> {answers['answer3'][1]}")
+          answerweight.append(3)
+          break
+        elif user_answer1 == "c":
+          print(f"You chose --> {answers['answer3'][2]}")
+          answerweight.append(1)
+          break
+        elif user_answer1 == "d":
+          print(f"You chose --> {answers['answer3'][3]}")
+          answerweight.append(2)
+          break
 
 
 #fourth function
@@ -103,8 +166,26 @@ def fourthquestion():
   elif user_answer1 == "d":
     print(f"You chose --> {answers['answer4'][3]}")
     answerweight.append(3)
-  elif user_answer1 != ["a", "b", "c", "d"]:
-    print("Please choose A, B, C, or D to continue")
+  else:
+      while user_answer1 != ["a", "b", "c", "d"]:
+        print("Please choose A, B, C, or D")
+        user_answer1= input("Enter choice: ").lower()
+        if user_answer1 == "a":
+          print(f"You chose --> {answers['answer4'][0]}")
+          answerweight.append(2)
+          break
+        elif user_answer1 == "b":
+          print(f"You chose --> {answers['answer4'][1]}")
+          answerweight.append(4)
+          break
+        elif user_answer1 == "c":
+          print(f"You chose --> {answers['answer4'][2]}")
+          answerweight.append(1)
+          break
+        elif user_answer1 == "d":
+          print(f"You chose --> {answers['answer4'][3]}")
+          answerweight.append(3)
+          break
 
 #fifth function
 def fifthquestion():
@@ -125,5 +206,23 @@ def fifthquestion():
   elif user_answer1 == "d":
     print(f"You chose --> {answers['answer5'][3]}")
     answerweight.append(4)
-  elif user_answer1 != ["a", "b", "c", "d"]:
-    print("Please choose A, B, C, or D to continue")
+  else:
+      while user_answer1 != ["a", "b", "c", "d"]:
+        print("Please choose A, B, C, or D")
+        user_answer1= input("Enter choice: ").lower()
+        if user_answer1 == "a":
+          print(f"You chose --> {answers['answer5'][0]}")
+          answerweight.append(3)
+          break
+        elif user_answer1 == "b":
+          print(f"You chose --> {answers['answer5'][1]}")
+          answerweight.append(1)
+          break
+        elif user_answer1 == "c":
+          print(f"You chose --> {answers['answer5'][2]}")
+          answerweight.append(2)
+          break
+        elif user_answer1 == "d":
+          print(f"You chose --> {answers['answer5'][3]}")
+          answerweight.append(4)
+          break
