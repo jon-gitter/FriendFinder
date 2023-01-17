@@ -2,7 +2,7 @@
 
 #Will we be friends? project
 import time
-import test
+import logic
 
 
 #introduction
@@ -16,12 +16,12 @@ if intro in ["y", "yes"]:
   print("Great! Let's get started.")
 
   #function calls
-  test.namequestion()
-  test.firstquestion()
-  test.secondquestion()
-  test.thirdquestion()
-  test.fourthquestion()
-  test.fifthquestion()
+  logic.namequestion()
+  logic.firstquestion()
+  logic.secondquestion()
+  logic.thirdquestion()
+  logic.fourthquestion()
+  logic.fifthquestion()
   
   #outro
   time.sleep(2)
@@ -36,21 +36,31 @@ else:
     intro= input().lower()
     if intro in ["y", "yes"]:
       print("Great! Let's get started.")
-      test.firstquestion()
-      test.firstquestion()
-      test.secondquestion()
-      test.thirdquestion()
-      test.fourthquestion()
-      test.fifthquestion()
+      logic.firstquestion()
+      logic.firstquestion()
+      logic.secondquestion()
+      logic.thirdquestion()
+      logic.fourthquestion()
+      logic.fifthquestion()
 
       #outro
       time.sleep(2)
-      print("Thank you for taking my quiz!")
+      print("That's it for the quiz!")
       break
       
     elif intro in ["n", "no"]:
       print("Boooo you're no fun!")
       break
 
+# calculations
 
-print(test.answerweight)
+def weightcalc():
+  sumweight= sum(logic.answerweight)
+  sumper= (sumweight / 20) * 100
+  print(f"Thanks for taking my quiz {logic.username[0]}, we're {sumper}% compatible to be friends.")
+  friendslist = open("friendslist.txt", "a")
+  friendslist.write(f"{time.asctime(time.localtime(time.time()))} {logic.username[0]} {sumper}% compatible. \n")
+  friendslist.close()
+
+
+weightcalc()
